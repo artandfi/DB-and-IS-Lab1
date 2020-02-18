@@ -8,6 +8,7 @@ GUIDELINE
 3. Garbage files [should] initially have value 0 stored. It stands for no garbage.
 4. To access master records, use IDs. To access slave records, use master's and product's ID.
 5. If you're still wondering how to do certain things, try following console output hints :)
+
 P.S. This project does not urge you to slave-trade. All the presented characters are fictitious and do have nothing to do with the real life.
 
 ~~~~~~~~~
