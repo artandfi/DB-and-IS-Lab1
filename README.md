@@ -2,6 +2,7 @@
 DB imitation
 
 GUIDELINE
+
 0. Legend: "masters" stands for suppliers, "slaves" stand for supplements. The project represents a many-to-many relation between suppliers and product (only represented with abstract IDs, not appearing anywhere in the storage) via indexed binary files.
 1. Adding a new record pushes it to the end of the database.
 2. Deleting the record doesn't remove it physically, just marks it as logically non-existing and available as free space for the oncoming insertions (address is being added to the garbage file).
