@@ -41,6 +41,10 @@ int checkRecordExistence(struct Indexer indexer, char* error)
 	return 1;
 }
 
+// !!! WARNING !!!
+// This function causes some file flush error and may be actually omitted
+// (IRL different supplements may have same kind of product supplied).
+// [DEPRECATED]
 int checkKeyPairUniqueness(struct Master master, int productId)
 {
 	FILE* slavesDb = fopen(SLAVE_DATA, "r+b");
