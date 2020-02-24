@@ -62,17 +62,10 @@ int main()
 					printf("Enter product ID: ");
 					scanf("%d", &id);
 
-					if (checkKeyPairUniqueness(master, id))		// Унікальність по коду деталі
-					{
-						slave.productId = id;
-						readSlave(&slave);
-						insertSlave(master, slave, error);
-						printf("Inserted successfully. To access, use master\'s and product\'s IDs\n");
-					}
-					else
-					{
-						printf("Error: non-unique product key\n");
-					}
+					slave.productId = id;
+					readSlave(&slave);
+					insertSlave(master, slave, error);
+					printf("Inserted successfully. To access, use master\'s and product\'s IDs\n");
 				}
 				else
 				{
