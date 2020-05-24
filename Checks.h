@@ -6,7 +6,8 @@
 
 int checkFileExistence(FILE* indexTable, FILE* database, char* error)
 {
-	if (indexTable == NULL || database == NULL)				// Файли БД ще не існують
+	// DB files do not exist yet
+	if (indexTable == NULL || database == NULL)
 	{
 		strcpy(error, "database files are not created yet");
 		return 0;
@@ -23,7 +24,7 @@ int checkIndexExistence(FILE* indexTable, char* error, int id)
 
 	if (indexTableSize == 0 || id * sizeof(struct Indexer) > indexTableSize)
 	{
-		strcpy(error, "no such ID in table");				// Такого номеру в табличці нема
+		strcpy(error, "no such ID in table");
 		return 0;
 	}
 
@@ -32,7 +33,8 @@ int checkIndexExistence(FILE* indexTable, char* error, int id)
 
 int checkRecordExistence(struct Indexer indexer, char* error)
 {
-	if (!indexer.exists)									// Запис було вилучено
+	// Record's been removed
+	if (!indexer.exists)
 	{
 		strcpy(error, "the record you\'re looking for has been removed");
 		return 0;
